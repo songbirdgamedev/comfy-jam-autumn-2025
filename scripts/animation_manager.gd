@@ -2,7 +2,7 @@ extends Node
 
 const SPRITE: PackedScene = preload("res://scenes/vegetable_sprite.tscn")
 const SPEED: float = 0.25
-const SOUP_POSITION: Vector2 = Vector2(100, 100)
+const SOUP_POSITION: Vector2 = Vector2(90, 220)
 
 signal swap_finished
 signal drop_finished

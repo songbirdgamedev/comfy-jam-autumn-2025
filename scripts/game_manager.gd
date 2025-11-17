@@ -52,6 +52,7 @@ var offsets: PackedInt32Array = PackedInt32Array([
 	-1, 1, -GRID_SIZE, GRID_SIZE
 ])
 
+
 func get_new_type() -> int:
 	return randi() % NUM_SPRITES
 

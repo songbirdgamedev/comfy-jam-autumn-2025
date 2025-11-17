@@ -27,6 +27,7 @@ func _add_items() -> void:
 			grid[i].append(vegetable.type)
 			add_child(vegetable)
 
+	await get_tree().create_timer(0.5).timeout
 	grid_updated.emit()
 
 
@@ -235,6 +236,9 @@ func reset_grid() -> void:
 
 
 func shuffle_grid() -> void:
+	if GameManager.current_state != GameManager.State.READY:
+		return
+
 	for n in range(GRID_SIZE * GRID_SIZE - 1, 0, -1):
 		var k: int = randi_range(0, n)
 		_swap(_convert(n), _convert(k))

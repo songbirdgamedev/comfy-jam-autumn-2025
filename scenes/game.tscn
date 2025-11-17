@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://d12lgou8eq5qh" path="res://scripts/animation_manager.gd" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://okiihfr7xu2h" path="res://scenes/grid.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://cubiuoj0cb5" path="res://assets/sprites/soup.png" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://bwc8g5aa0tvlk" path="res://scenes/button_template.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" path="res://scenes/button_template.tscn" id="6_p57ef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2jwc"]
 atlas = ExtResource("5_iywne")
@@ -80,10 +80,12 @@ script = ExtResource("1_yqjtg")
 script = ExtResource("2_lbhrr")
 
 [node name="Background" parent="." instance=ExtResource("1_uwrxv")]
+layer = -2
 
 [node name="Grid" parent="." instance=ExtResource("3_lnu2h")]
 
 [node name="Soup" type="AnimatedSprite2D" parent="."]
+z_index = -1
 position = Vector2(96, 256)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_p57ef")
@@ -99,4 +101,7 @@ offset_bottom = 304.0
 offset_left = 11.0
 text = "shuffle"
 
+[connection signal="pressed" from="ShuffleButton" to="Grid/MarginContainer/GridContainer" method="shuffle_grid"]
+
+[editable path="Grid"]
 [editable path="ShuffleButton"]
