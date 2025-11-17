@@ -1,9 +1,75 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy4dnddn2ir1m"]
+[gd_scene load_steps=16 format=3 uid="uid://cy4dnddn2ir1m"]
 
 [ext_resource type="PackedScene" uid="uid://ch0l7j3lfmkd6" path="res://scenes/background.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://f540yjuyu4fp" path="res://scripts/game_manager.gd" id="1_yqjtg"]
 [ext_resource type="Script" uid="uid://d12lgou8eq5qh" path="res://scripts/animation_manager.gd" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://okiihfr7xu2h" path="res://scenes/grid.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://cubiuoj0cb5" path="res://assets/sprites/soup.png" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://bwc8g5aa0tvlk" path="res://scenes/button_template.tscn" id="6_p57ef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2jwc"]
+atlas = ExtResource("5_iywne")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm208"]
+atlas = ExtResource("5_iywne")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pab1"]
+atlas = ExtResource("5_iywne")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o30b1"]
+atlas = ExtResource("5_iywne")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka6nf"]
+atlas = ExtResource("5_iywne")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws7p0"]
+atlas = ExtResource("5_iywne")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecdxc"]
+atlas = ExtResource("5_iywne")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qls88"]
+atlas = ExtResource("5_iywne")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p57ef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2jwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm208")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pab1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o30b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka6nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws7p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecdxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qls88")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Game" type="Node2D"]
 
@@ -16,3 +82,21 @@ script = ExtResource("2_lbhrr")
 [node name="Background" parent="." instance=ExtResource("1_uwrxv")]
 
 [node name="Grid" parent="." instance=ExtResource("3_lnu2h")]
+
+[node name="Soup" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 256)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_p57ef")
+autoplay = "default"
+
+[node name="ShuffleButton" parent="." instance=ExtResource("6_p57ef")]
+offset_left = 488.0
+offset_top = 264.0
+offset_right = 600.0
+offset_bottom = 304.0
+
+[node name="Label" parent="ShuffleButton" index="0"]
+offset_left = 11.0
+text = "shuffle"
+
+[editable path="ShuffleButton"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Comfy Jam: Autumn 2025"
-run/main_scene="uid://cy4dnddn2ir1m"
+run/main_scene="uid://dsd6mxlp4gr1r"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://scripts/game_manager.gd"
 AnimationManager="*res://scripts/animation_manager.gd"
+AudioManager="*res://scenes/audio_manager.tscn"
 
 [display]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const START_SCREEN = preload("uid://chn6qjqgx1aqc")
+const START_SCREEN = preload("res://scenes/start_screen.tscn")
 
 
 func _ready():

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhns5irxxybd"]
+
+[ext_resource type="Script" uid="uid://detyd7bb8kpn4" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
+[ext_resource type="AudioStream" uid="uid://dl46qxh2j6fyo" path="res://assets/sounds/boiling-spaghetti-69119.mp3" id="2_liach"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_8qd8g")
+
+[node name="Soup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_liach")

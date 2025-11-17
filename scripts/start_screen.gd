@@ -3,7 +3,11 @@ extends Node2D
 @onready var play_button: NinePatchRect = $Node2D/PlayButton
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const GAME = preload("uid://cy4dnddn2ir1m")
+const GAME = preload("res://scenes/game.tscn")
+
+
+func _ready() -> void:
+	AudioManager.play_soup()
 
 
 func _on_play_button_pressed() -> void:
