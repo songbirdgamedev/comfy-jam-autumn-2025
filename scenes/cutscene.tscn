@@ -1,0 +1,452 @@
+[gd_scene load_steps=19 format=3 uid="uid://dsd6mxlp4gr1r"]
+
+[ext_resource type="Texture2D" uid="uid://cxxrg7w8je0p0" path="res://assets/sprites/soup_bunny.png" id="1_0sipp"]
+[ext_resource type="Script" uid="uid://bmqg7448fl4un" path="res://scripts/cutscene.gd" id="1_fs8wb"]
+[ext_resource type="Texture2D" uid="uid://u7eyb8g8pp3m" path="res://assets/sprites/bunny_speech.png" id="2_2bm7f"]
+[ext_resource type="FontFile" uid="uid://csqcs1ntm4gn3" path="res://assets/fonts/Kenney Mini.ttf" id="3_2bm7f"]
+[ext_resource type="Texture2D" uid="uid://s3j4wuj08eh5" path="res://assets/sprites/soup_bunny_2.png" id="3_fs8wb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d18fx"]
+atlas = ExtResource("1_0sipp")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bm7f"]
+atlas = ExtResource("1_0sipp")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb0yx"]
+atlas = ExtResource("1_0sipp")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ptll"]
+atlas = ExtResource("1_0sipp")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d18fx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d18fx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bm7f")
+}],
+"loop": true,
+"name": &"soup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb0yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ptll")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxq4c"]
+atlas = ExtResource("3_fs8wb")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs8wb"]
+atlas = ExtResource("3_fs8wb")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75brc"]
+atlas = ExtResource("3_fs8wb")
+region = Rect2(640, 0, 640, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50sc"]
+atlas = ExtResource("3_fs8wb")
+region = Rect2(0, 0, 640, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxq4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxq4c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs8wb")
+}],
+"loop": true,
+"name": &"soup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75brc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v50sc")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_2bm7f"]
+resource_name = "play_cutscene"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech1/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.6, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Speech1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Speech2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.3, 3.78, 6.113333, 6.4133334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8, 3.3, 6.1, 6.9133334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(320, 180), Vector2(960, 180), Vector2(960, 180), Vector2(640, 180)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Speech2/RichTextLabel2:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.78, 4.78, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.65, 1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bunny2:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.78, 4.78),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"idle", &"talk", &"soup"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FinalBubble:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(6.4133334, 6.903333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FinalBubble/Speech4/RichTextLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(6.9133334, 7.9133334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bunny1:animation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [&"idle", &"talk", &"soup"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D/ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8.413334, 9.913334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.3019608, 0.17254902, 0.09019608, 0), Color(0.3019608, 0.17254902, 0.09019608, 0), Color(0.3019608, 0.17254902, 0.09019608, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fs8wb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Speech1/RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Speech1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Speech2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 180)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Speech2/RichTextLabel2:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Bunny2:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"talk"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FinalBubble:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("FinalBubble/Speech4/RichTextLabel:visible_ratio")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Bunny1:animation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D/ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.3019608, 0.17254902, 0.09019608, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bb0yx"]
+_data = {
+&"RESET": SubResource("Animation_fs8wb"),
+&"play_cutscene": SubResource("Animation_2bm7f")
+}
+
+[node name="Cutscene" type="Node2D"]
+script = ExtResource("1_fs8wb")
+
+[node name="Bunny1" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_d18fx")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Speech1" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(330, 88)
+texture = ExtResource("2_2bm7f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Speech1"]
+custom_minimum_size = Vector2(272, 80)
+offset_left = -138.0
+offset_top = -56.0
+offset_right = 134.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(0.3019608, 0.17254902, 0.09019608, 1)
+theme_override_fonts/normal_font = ExtResource("3_2bm7f")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "@#!$%,  !;?>#. [font_size=40][shake]sooouuup!!![/shake][/font_size]"
+horizontal_alignment = 1
+visible_characters = 15
+visible_ratio = 0.6
+
+[node name="Bunny2" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 180)
+sprite_frames = SubResource("SpriteFrames_wxq4c")
+animation = &"talk"
+autoplay = "idle"
+
+[node name="Speech2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(952, 88)
+texture = ExtResource("2_2bm7f")
+flip_h = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Speech2"]
+custom_minimum_size = Vector2(272, 80)
+offset_left = -136.0
+offset_top = -56.0
+offset_right = 136.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(0.3019608, 0.17254902, 0.09019608, 1)
+theme_override_fonts/normal_font = ExtResource("3_2bm7f")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "+_<@$*&?!]£, *%^£?@. [font_size=40][shake]sooouuup!!![/shake][/font_size]"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="FinalBubble" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Speech3" type="Sprite2D" parent="FinalBubble"]
+position = Vector2(632, 88)
+texture = ExtResource("2_2bm7f")
+flip_h = true
+
+[node name="Speech4" type="Sprite2D" parent="FinalBubble"]
+position = Vector2(632, 88)
+texture = ExtResource("2_2bm7f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FinalBubble/Speech4"]
+custom_minimum_size = Vector2(272, 80)
+offset_left = -135.0
+offset_top = -56.0
+offset_right = 137.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(0.3019608, 0.17254902, 0.09019608, 1)
+theme_override_fonts/normal_font = ExtResource("3_2bm7f")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[font_size=48][shake]sooouuup!![/shake][/font_size]"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.3019608, 0.17254902, 0.09019608, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bb0yx")
+}
+autoplay = "play_cutscene"

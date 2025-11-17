@@ -1,8 +1,237 @@
-[gd_scene load_steps=0 format=3 uid="uid://chn6qjqgx1aqc"]
+[gd_scene load_steps=26 format=3 uid="uid://chn6qjqgx1aqc"]
+
+[ext_resource type="Script" uid="uid://dbkpobhrlpgyd" path="res://scripts/start_screen.gd" id="1_5pab1"]
+[ext_resource type="Texture2D" uid="uid://cubiuoj0cb5" path="res://assets/sprites/soup.png" id="1_o7i0r"]
+[ext_resource type="Texture2D" uid="uid://cxxrg7w8je0p0" path="res://assets/sprites/soup_bunny.png" id="1_r2jwc"]
+[ext_resource type="PackedScene" uid="uid://bwc8g5aa0tvlk" path="res://scenes/button_template.tscn" id="2_he1sj"]
+[ext_resource type="Texture2D" uid="uid://s3j4wuj08eh5" path="res://assets/sprites/soup_bunny_2.png" id="2_hm208"]
+[ext_resource type="FontFile" uid="uid://csqcs1ntm4gn3" path="res://assets/fonts/Kenney Mini.ttf" id="5_hm208"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcj7n"]
+atlas = ExtResource("1_r2jwc")
+region = Rect2(0, 0, 320, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdg0b"]
+atlas = ExtResource("1_r2jwc")
+region = Rect2(640, 0, 320, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfy2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcj7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdg0b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt4el"]
+atlas = ExtResource("2_hm208")
+region = Rect2(960, 0, 320, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phykr"]
+atlas = ExtResource("2_hm208")
+region = Rect2(320, 0, 320, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3i3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt4el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phykr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2jwc"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm208"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pab1"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o30b1"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka6nf"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws7p0"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecdxc"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qls88"]
+atlas = ExtResource("1_o7i0r")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcj7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2jwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm208")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pab1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o30b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka6nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws7p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecdxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qls88")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_hm208"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5pab1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o30b1"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o30b1"]
+_data = {
+&"RESET": SubResource("Animation_5pab1"),
+&"fade_in": SubResource("Animation_hm208"),
+&"fade_out": SubResource("Animation_o30b1")
+}
 
 [node name="StartScreen" type="Node2D"]
+script = ExtResource("1_5pab1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0.3019608, 0.17254902, 0.09019608, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Bunny1" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(160, 180)
+sprite_frames = SubResource("SpriteFrames_xfy2r")
+autoplay = "default"
+
+[node name="Bunny2" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(480, 180)
+sprite_frames = SubResource("SpriteFrames_q3i3u")
+autoplay = "default"
+
+[node name="Soup" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(320, 264)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pcj7n")
+autoplay = "default"
+frame_progress = 0.6418803
+
+[node name="PlayButton" parent="Node2D" instance=ExtResource("2_he1sj")]
+offset_left = 200.0
+offset_top = 128.0
+offset_right = 440.0
+offset_bottom = 184.0
+
+[node name="Label" parent="Node2D/PlayButton" index="0"]
+offset_left = 32.0
+offset_right = 208.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Button" parent="Node2D/PlayButton" index="1"]
+offset_right = 232.0
+offset_bottom = 56.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
+offset_left = 184.0
+offset_top = 8.0
+offset_right = 456.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(0.72156864, 0.6, 0.23921569, 1)
+theme_override_constants/line_separation = -20
+theme_override_fonts/normal_font = ExtResource("5_hm208")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[wave]perpetual soup"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o30b1")
+}
+autoplay = "fade_in"
+
+[connection signal="pressed" from="Node2D/PlayButton" to="." method="_on_play_button_pressed"]
+
+[editable path="Node2D/PlayButton"]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwc8g5aa0tvlk"]
+[gd_scene load_steps=9 format=3 uid="uid://bwc8g5aa0tvlk"]
 
 [ext_resource type="Texture2D" uid="uid://bdmhjs7dbgxi7" path="res://assets/sprites/button-bg.png" id="1_imqa4"]
+[ext_resource type="FontFile" uid="uid://csqcs1ntm4gn3" path="res://assets/fonts/Kenney Mini.ttf" id="2_7i7t8"]
+[ext_resource type="Script" uid="uid://inbn5edbkv31" path="res://scripts/button_template.gd" id="2_53v36"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i7t8"]
 
@@ -29,7 +31,19 @@ patch_margin_right = 8
 patch_margin_bottom = 8
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+script = ExtResource("2_53v36")
 metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_right = 104.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(0.3019608, 0.17254902, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_7i7t8")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -41,4 +55,5 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_53v36")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_0s861")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_odit7")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_gp0tr")
-text = "Play"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
